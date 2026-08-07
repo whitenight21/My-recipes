@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Recipes</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary: #D9532F;
+      --primary-hover: #BF411F;
+      --bg: #FDFBF7;
+      --card-bg: #FFFFFF;
+      --text-main: #2A2421;
+      --text-muted: #786C66;
+      --border: #EFEAE4;
+      --shadow-sm: 0 4px 20px rgba(42, 36, 33, 0.05);
+      --shadow-lg: 0 12px 30px rgba(42, 36, 33, 0.08);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding-bottom: 100px;
+    }
+
+    /* Centered Header & Navigation */
+    header {
+      text-align: center;
+      padding: 60px 20px 40px;
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    header .badge {
+      display: inline-block;
+      background: #F8EFEA;
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      padding: 6px 16px;
+      border-radius: 30px;
+      margin-bottom: 16px;
+    }
+
+    header h1 {
+      font-size: 3.2rem;
+      font-weight: 800;
+      letter-spacing: -1px;
+      color: var(--text-main);
+      margin-bottom: 12px;
+    }
+
+    header p {
+      font-size: 1.15rem;
+      color: var(--text-muted);
+      margin-bottom: 32px;
+    }
+
+    .meal-nav {
+      display: inline-flex;
+      background: #FFF;
+      padding: 6px;
+      border-radius: 40px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-sm);
+      gap: 6px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .meal-nav a {
+      text-decoration: none;
+      color: var(--text-main);
+      padding: 12px 28px;
+      border-radius: 30px;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .meal-nav a:hover {
+      background: var(--primary);
+      color: #FFF;
+      box-shadow: 0 4px 12px rgba(217, 83, 47, 0.25);
+    }
+
+    /* Main Container & Sections */
+    main {
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .meal-section {
+      margin-top: 70px;
+      scroll-margin-top: 30px;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .section-header h2 {
+      font-size: 2rem;
+      font-weight: 800;
+      letter-spacing: -0.5px;
+    }
+
+    .btn-surprise {
+      background: #FFF;
+      color: var(--primary);
+      border: 1.5px solid var(--primary);
+      padding: 10px 20px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .btn-surprise:hover {
+      background: var(--primary);
+      color: #FFF;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(217, 83, 47, 0.3);
+    }
+
+    .category-banner {
+      width: 100%;
+      height: 220px;
+      border-radius: 24px;
+      overflow: hidden;
+      margin-bottom: 32px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .category-banner img {
+      width: 100%; height: 100%;
+      object-fit: cover;
+    }
+
+    /* Recipe Cards */
+    .recipe-card {
+      background: var(--card-bg);
+      border-radius: 24px;
+      border: 1px solid var(--border);
+      padding: 32px;
+      margin-bottom: 36px;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .recipe-card:hover {
+      box-shadow: var(--shadow-lg);
+    }
+
+    .recipe-card.highlight {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 4px rgba(217, 83, 47, 0.2), var(--shadow-lg);
+      transform: translateY(-2px);
+    }
+
+    .recipe-title {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      letter-spacing: -0.3px;
+    }
+
+    .recipe-meta {
+      display: inline-flex;
+      align-items: center;
+      background: #F8EFEA;
+      color: var(--primary);
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 6px 14px;
+      border-radius: 20px;
+      margin-bottom: 20px;
+    }
+
+    .recipe-image-wrap {
+      width: 100%;
+      border-radius: 16px;
+      overflow: hidden;
+      margin-bottom: 24px;
+    }
+
+    .recipe-image {
+      width: 100%;
+      max-height: 380px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.5s ease;
+    }
+
+    .recipe-card:hover .recipe-image {
+      transform: scale(1.02);
+    }
+
+    .recipe-details h4 {
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin: 22px 0 10px;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .recipe-details ul, .recipe-details ol {
+      padding-left: 22px;
+    }
+
+    .recipe-details li {
+      margin-bottom: 8px;
+      color: var(--text-main);
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <span class="badge">Personal Cookbook</span>
+    <h1>My Recipes</h1>
+    <p>Select a part of the day to explore delicious ideas.</p>
+    <nav class="meal-nav">
+      <a href="#breakfast">Breakfast</a>
+      <a href="#lunch">Lunch</a>
+      <a href="#dinner">Dinner</a>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Breakfast Section -->
+    <section id="breakfast" class="meal-section">
+      <div class="section-header">
+        <h2>Breakfast</h2>
+        <button class="btn-surprise" onclick="surpriseMe('breakfast')">✨ Surprise Me</button>
+      </div>
+      <div class="category-banner">
+        <img src="https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?w=1000" alt="Breakfast Banner">
+      </div>
+      <div id="breakfast-container"></div>
+    </section>
+
+    <!-- Lunch Section -->
+    <section id="lunch" class="meal-section">
+      <div class="section-header">
+        <h2>Lunch</h2>
+        <button class="btn-surprise" onclick="surpriseMe('lunch')">✨ Surprise Me</button>
+      </div>
+      <div class="category-banner">
+        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=1000" alt="Lunch Banner">
+      </div>
+      <div id="lunch-container"></div>
+    </section>
+
+    <!-- Dinner Section -->
+    <section id="dinner" class="meal-section">
+      <div class="section-header">
+        <h2>Dinner</h2>
+        <button class="btn-surprise" onclick="surpriseMe('dinner')">✨ Surprise Me</button>
+      </div>
+      <div class="category-banner">
+        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1000" alt="Dinner Banner">
+      </div>
+      <div id="dinner-container"></div>
+    </section>
+  </main>
+
+  <script>
+    // EDIT OR ADD YOUR RECIPES HERE IN THE CODE
+    const recipes = [
+      {
+        id: "rec-1",
+        title: "Avocado & Poached Egg Toast",
+        category: "breakfast",
+        image: "https://images.unsplash.com/photo-1525351484163-7529414344d8?w=800",
+        prepTime: "10 mins",
+        ingredients: ["2 sourdough slices", "1 ripe avocado", "2 eggs", "Chili flakes & sea salt"],
+        instructions: ["Toast sourdough slices until golden.", "Mash avocado with salt and lemon juice.", "Poach eggs in simmering water for 3 mins.", "Assemble and top with chili flakes."]
+      },
+      {
+        id: "rec-2",
+        title: "Grilled Chicken Caesar Salad",
+        category: "lunch",
+        image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800",
+        prepTime: "20 mins",
+        ingredients: ["2 chicken breasts", "Fresh romaine lettuce", "Shaved parmesan", "Caesar dressing"],
+        instructions: ["Season and grill chicken until cooked through.", "Chop romaine lettuce into a serving bowl.", "Slice grilled chicken and place over salad.", "Toss with parmesan and dressing."]
+      },
+      {
+        id: "rec-3",
+        title: "Creamy Garlic Butter Salmon",
+        category: "dinner",
+        image: "https://images.unsplash.com/photo-1467003909585-2f8a72700288?w=800",
+        prepTime: "25 mins",
+        ingredients: ["2 salmon fillets", "3 minced garlic cloves", "1/2 cup heavy cream", "1 tbsp butter"],
+        instructions: ["Sear salmon fillets in a skillet until golden.", "Melt butter and sauté garlic briefly.", "Pour in cream and simmer until sauce thickens.", "Spoon sauce over salmon and serve."]
+      }
+    ];
+
+    // Render Recipes into matched categories
+    function renderAll() {
+      ['breakfast', 'lunch', 'dinner'].forEach(cat => {
+        const container = document.getElementById(`${cat}-container`);
+        container.innerHTML = '';
+        
+        const catRecipes = recipes.filter(r => r.category === cat);
+        catRecipes.forEach(recipe => {
+          container.appendChild(createRecipeCard(recipe));
+        });
+      });
+    }
+
+    // Generate HTML Card Component
+    function createRecipeCard(recipe) {
+      const card = document.createElement('article');
+      card.className = 'recipe-card';
+      card.id = `card-${recipe.id}`;
+
+      card.innerHTML = `
+        <h3 class="recipe-title">${recipe.title}</h3>
+        <div class="recipe-meta">⏱ Prep time: ${recipe.prepTime}</div>
+        <div class="recipe-image-wrap">
+          <img class="recipe-image" src="${recipe.image}" alt="${recipe.title}">
+        </div>
+        <div class="recipe-details">
+          <h4>Ingredients</h4>
+          <ul>${recipe.ingredients.map(item => `<li>${item}</li>`).join('')}</ul>
+          <h4>Instructions</h4>
+          <ol>${recipe.instructions.map(step => `<li>${step}</li>`).join('')}</ol>
+        </div>
+      `;
+      return card;
+    }
+
+    // Section-scoped Surprise Me logic
+    function surpriseMe(category) {
+      const available = recipes.filter(r => r.category === category);
+      if (available.length === 0) return alert('No recipes available in this section!');
+
+      const randomRecipe = available[Math.floor(Math.random() * available.length)];
+      const element = document.getElementById(`card-${randomRecipe.id}`);
+
+      if (element) {
+        element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        element.classList.add('highlight');
+        setTimeout(() => element.classList.remove('highlight'), 2000);
+      }
+    }
+
+    // Initialize
+    renderAll();
+  </script>
+</body>
+</html>
