@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>My Recipes</title>
+  <title>Tradičné & Moderné Recepty</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
@@ -166,7 +166,6 @@
       margin-bottom: 36px;
       box-shadow: var(--shadow-sm);
       position: relative;
-      scroll-margin-top: 40px; /* Ensures padding top so title is fully visible when scrolled to */
       transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     }
 
@@ -183,8 +182,24 @@
     .recipe-title {
       font-size: 1.6rem;
       font-weight: 700;
-      margin-bottom: 10px;
+      margin-bottom: 6px;
       letter-spacing: -0.3px;
+    }
+
+    .recipe-subtitle {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: var(--primary);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 12px;
+    }
+
+    .recipe-meta-group {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 20px;
     }
 
     .recipe-meta {
@@ -196,7 +211,6 @@
       font-size: 0.85rem;
       padding: 6px 14px;
       border-radius: 20px;
-      margin-bottom: 20px;
     }
 
     .recipe-image-wrap {
@@ -219,7 +233,7 @@
     }
 
     .recipe-details h4 {
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       font-weight: 700;
       margin: 22px 0 10px;
       color: var(--primary);
@@ -271,338 +285,361 @@
 
   <!-- Top Anchor -->
   <header id="top">
-    <span class="badge">Gocik Cookbook</span>
-    <h1>My Recipes</h1>
-    <p>Explore our delicious recipes</p>
+    <span class="badge">Moja Kuchárka</span>
+    <h1>Tradičné & Moderné Recepty</h1>
+    <p>Vyberte si časť dňa pre lahodné domáce špeciality.</p>
     <nav class="meal-nav">
-      <a href="#breakfast">Breakfast</a>
-      <a href="#lunch">Lunch</a>
-      <a href="#dinner">Dinner</a>
+      <a href="#raňajky">Raňajky</a>
+      <a href="#obed">Obed</a>
+      <a href="#večera">Večera</a>
     </nav>
   </header>
 
   <main>
-    <!-- Breakfast Section -->
-    <section id="breakfast" class="meal-section">
+    <!-- Raňajky Section -->
+    <section id="raňajky" class="meal-section">
       <div class="section-header">
-        <h2>Breakfast</h2>
-        <button class="btn-surprise" onclick="surpriseMe('breakfast')">✨ Surprise Me</button>
+        <h2>Raňajky</h2>
+        <button class="btn-surprise" onclick="surpriseMe('raňajky')">✨ Prekvap ma</button>
       </div>
       <div class="category-banner">
-        <img src="./images/breakfast-banner.jpg" alt="Breakfast Banner">
+        <img src="https://images.unsplash.com/photo-1533089860892-a7c6f0a88666?w=1000" alt="Raňajky Banner">
       </div>
-      <div id="breakfast-container"></div>
+      <div id="raňajky-container"></div>
     </section>
 
-    <!-- Lunch Section -->
-    <section id="lunch" class="meal-section">
+    <!-- Obed Section -->
+    <section id="obed" class="meal-section">
       <div class="section-header">
-        <h2>Lunch</h2>
-        <button class="btn-surprise" onclick="surpriseMe('lunch')">✨ Surprise Me</button>
+        <h2>Obed</h2>
+        <button class="btn-surprise" onclick="surpriseMe('obed')">✨ Prekvap ma</button>
       </div>
       <div class="category-banner">
-        <img src="./images/lunch-banner.jpg" alt="Lunch Banner">
+        <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=1000" alt="Obed Banner">
       </div>
-      <div id="lunch-container"></div>
+      <div id="obed-container"></div>
     </section>
 
-    <!-- Dinner Section -->
-    <section id="dinner" class="meal-section">
+    <!-- Večera Section -->
+    <section id="večera" class="meal-section">
       <div class="section-header">
-        <h2>Dinner</h2>
-        <button class="btn-surprise" onclick="surpriseMe('dinner')">✨ Surprise Me</button>
+        <h2>Večera</h2>
+        <button class="btn-surprise" onclick="surpriseMe('večera')">✨ Prekvap ma</button>
       </div>
       <div class="category-banner">
-        <img src="./images/dinner-banner.jpg" alt="Dinner Banner">
+        <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=1000" alt="Večera Banner">
       </div>
-      <div id="dinner-container"></div>
+      <div id="večera-container"></div>
     </section>
   </main>
 
   <script>
+    // ALL RECIPES TRANSCRIBED FROM YOUR COOKBOOK PAGES
     const recipes = [
-      // BREAKFAST
+      // RAŇAJKY (Breakfast)
       {
-        id: "rec-b1",
-        title: "Slovak Cod Salad (Treska)",
-        category: "breakfast",
-        image: "./images/treska.jpg",
-        prepTime: "2 mins",
-        ingredients: ["Slovak cod salad (Treska)", "Fresh bread or bread roll (rožok)"],
-        instructions: ["Serve the ready-made cod salad directly from the container with fresh bread or a bread roll."]
+        id: "rec-1",
+        title: "Hemendex so šunkou a slaninou",
+        subtitle: "Tradičný recept Marcela",
+        category: "raňajky",
+        image: "https://images.unsplash.com/photo-1525351484163-7529414344d8?w=800",
+        prepTime: "15 minút",
+        servings: "2 porcie",
+        ingredients: [
+          "Rastlinný olej",
+          "100 g bravčovej šunky",
+          "50 g slaniny na plátky",
+          "4 vajíčka",
+          "Morská soľ a mleté čierne korenie",
+          "Šalát: 50 g cherry paradajok, 1 paprika, 1 hrsť poľníčka, olivový olej, citrónová šťava"
+        ],
+        instructions: [
+          "Na rozohriatu panvicu nalejeme rastlinný olej.",
+          "Rozložíme plátky šunky a slaniny a opekáme na miernom plameni.",
+          "Po chvíli na šunku a slaninu opatrne vyklepneme vajíčka.",
+          "Osolíme, okoreníme a pečieme ďalej.",
+          "Šalát: Cherry paradajky nakrájame na polovice/štvrtiny. Papriku nakrájame na menšie kúsky.",
+          "Nakrájanú zeleninu spolu s lístkami poľníčka preložíme do misky, ochutíme soľou, korením, olivovým olejom a citrónovou šťavou.",
+          "Hemendex podávame so šalátom."
+        ]
       },
       {
-        id: "rec-b2",
-        title: "Eggs with Mushrooms",
-        category: "breakfast",
-        image: "./images/eggs-mushrooms.jpg",
-        prepTime: "10 mins",
-        ingredients: ["2-3 eggs", "1/2 chopped onion", "1/2 cup sliced mushrooms", "Bread", "Ground black pepper", "1 tbsp oil"],
-        instructions: ["Sauté finely chopped onion and sliced mushrooms in oil until soft.", "Beat in the eggs, season with black pepper, cook until set to your liking, and serve with bread."]
+        id: "rec-2",
+        title: "Pošírované vajíčko s grilovaným chlebom a avokádom",
+        subtitle: "Moderný recept Marcela",
+        category: "raňajky",
+        image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=800",
+        prepTime: "30 minút",
+        servings: "4 porcie",
+        ingredients: [
+          "Ocot",
+          "4 vajíčka",
+          "2 avokáda",
+          "1 limetka",
+          "4 krajce bezlepkového chleba",
+          "1 strúčik cesnaku",
+          "Maslo na potretie",
+          "Morská soľ a mleté čierne korenie",
+          "Na ozdobu: sezam, 100 g rukoly, 1 štipľavá paprička"
+        ],
+        instructions: [
+          "V menšom hrnci necháme zovrieť vodu s 1 lyžicou octu. Vriacu vodu zamiešame lyžicou tak, aby sme vytvorili vír, do ktorého postupne opatrne vyklepneme vajíčka. Varíme domäkka asi 2-3 minúty.",
+          "Avokádo rozdelíme na polovice a opatrne odstránime kôstku. Pomocou lyžice vyberieme dužinu a nakrájame ju na tenké plátky. Pokvapkáme limetkovou šťavou.",
+          "Krajce chleba opečieme dozlatista na rozohriatej grilovacej panvici bez použitia tuku. Jednu stranu zľahka potrieme maslom a cesnakom.",
+          "Na každý krajec rozložíme plátky avokáda, na ne pošírované vajíčko, ktoré jemne narežeme nožom a ochutíme soľou a korením.",
+          "Dozdobíme sezamom, lístkami rukoly a štipľavou papričkou."
+        ]
       },
       {
-        id: "rec-b3",
-        title: "Sunny-Side Up Eggs",
-        category: "breakfast",
-        image: "./images/sunny-side-eggs.jpg",
-        prepTime: "5 mins",
-        ingredients: ["2 eggs", "Bread", "Ground black pepper", "Pinch of Vegeta seasoning", "1 tbsp oil"],
-        instructions: ["Heat oil in a pan and crack the eggs directly into it.", "Season with black pepper and a pinch of Vegeta.", "Fry until the whites are set, then serve hot with bread."]
+        id: "rec-3",
+        title: "Banánový chlieb s jahodovým chia džemom a arašidovým maslom",
+        subtitle: "Moderný recept Veroniky",
+        category: "raňajky",
+        image: "https://images.unsplash.com/photo-1587314168485-3236d6710814?w=800",
+        prepTime: "3 hodiny",
+        servings: "10 porcií",
+        ingredients: [
+          "Džem: 1,5 kg jahôd, 300 g medu, 60 g chia, šťava z 1 citróna",
+          "Chlebík: 4 zrelé banány, 80 g kokosového oleja, 80 ml javorového sirupu, 60 ml sójového nápoja, 2 vajíčka",
+          "Suché: 1/2 lyžičky sódy bikarbóny, 1 lyžička mletej škorice, 1/2 lyžičky morskej soli",
+          "Múky: 140 g pohánkovej múky, 100 g kukuričnej múky, 180 g mletých vlašských orechov",
+          "Arašidové maslo na potretie"
+        ],
+        instructions: [
+          "Džem: Jahody umyjeme, očistíme a varíme na miernom ohni približne 30 minút. Pridáme med a ešte asi 5 minút prevaríme. Na záver primiešame chia, šťavu z citróna a džem odstavíme.",
+          "Chlebík: 3 banány rozlačíme vidličkou. V miske ručne metličkou rozšľaháme rozustený kokosový olej, javorový sirup, sójový nápoj a vajíčka.",
+          "Suché ingrediencie zmiešame a naraz pridáme k mokrým. Premiešame len jemne.",
+          "Cesto nalejeme do kokosovým olejom vymazanej a mletými orechmi vysypanej formy. Navrch uložíme banán nakrájaný na plátky a pečieme pri 170 °C približne 50 minút.",
+          "Vychladnutý chlebík podávame nakrájaný na plátky, potretý arašidovým maslom a jahodovým chia džemom."
+        ]
       },
       {
-        id: "rec-b4",
-        title: "Salty French Toast (Chlieb vo vajci)",
-        category: "breakfast",
-        image: "./images/chlieb-vo-vajci.jpg",
-        prepTime: "10 mins",
-        ingredients: ["3-4 bread slices", "2 eggs", "Ground black pepper", "2 tbsp oil"],
-        instructions: ["Whisk the eggs in a shallow bowl and season with black pepper.", "Dip bread slices on both sides to coat fully.", "Fry in hot oil until golden brown on each side."]
+        id: "rec-4",
+        title: "Brioška s domácim rebarborovo-jahodovým džemom",
+        subtitle: "Tradičný recept Veroniky",
+        category: "raňajky",
+        image: "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800",
+        prepTime: "cez noc",
+        servings: "10 porcií",
+        ingredients: [
+          "Džem: 600 g jahôd, 600 g rebarbory, 500 g kryštálového cukru, šťava z 2 citrónov",
+          "Brioška: 250 g polohrubej múky, 55 g vajíčok, 25 ml mlieka, 55 ml vody, 10 g droždia, 5 g soli, 25 g kryštálového cukru, 75 g masla",
+          "Na potretie: 1 vajíčko, maslo na vymazanie formy"
+        ],
+        instructions: [
+          "Džem: Jahody a rebarboru nakrájame na malé kúsky, zmiešame s cukrom a necháme pri izbovej teplote odstáť do druhého dňa. Na druhý deň varíme na miernom ohni do zhustnutia. Pred koncom pridáme citrónovú šťavu.",
+          "Brioška: Do mixéra dáme múku, vajíčka, mlieko, vodu a rozdrobené droždie. Miešame približne 3 minúty. Potom primiešame soľ a cukor. Na záver po kockách zapracujeme maslo.",
+          "Cesto necháme nakysnúť, potom ho prikryjeme fóliou a necháme cez noc nakysnúť v chladničke.",
+          "Na druhý deň cesto presypeme na pomúčenú dosku, vytvarujeme a vložíme do formy na chlebík. Necháme kysnúť ešte 1 hodinu. Potrieme vajíčkom a pečieme pri 180 °C približne 30 minút.",
+          "Nakrájanú briošku podávame potretú maslom a džemom."
+        ]
       },
       {
-        id: "rec-b5",
-        title: "Muesli with Milk",
-        category: "breakfast",
-        image: "./images/muesli-milk.jpg",
-        prepTime: "2 mins",
-        ingredients: ["1 cup muesli", "1 cup cold or warm milk"],
-        instructions: ["Pour muesli into a bowl.", "Add milk to taste and serve immediately."]
+        id: "rec-5",
+        title: "Palacinky plnené tvarohom preliate dusenými jablkami",
+        subtitle: "Tradičný recept Veroniky",
+        category: "raňajky",
+        image: "https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=800",
+        prepTime: "30 minút",
+        servings: "6 porcií",
+        ingredients: [
+          "Palacinky: 150 g hladkej múky, štipka soli, 20 g kryštálového cukru, kôra z 1 pomaranča, 4 vajíčka, 400 ml plnotučného mlieka, 30 g prepusteného masla",
+          "Plnka: 50 g sušených hrozienok, 80 ml pomarančovej šťavy, 400 g tučného tvarohu, 30 g medu, 1 vanilkový struk",
+          "Dusené jablká: 3 veľké jablká, šťava z 1 citróna, 60 g kryštálového cukru, štipka mletej škorice"
+        ],
+        instructions: [
+          "Palacinky: Múku preosejeme, pridáme soľ, cukor, pomarančovú kôru, vajíčka, žĺtka a trochu mlieka. Zmes rozmiešame dohladka, až potom prilejeme zvyšné mlieko.",
+          "Na rozpalenej panvici s trochou prepusteného masla pečieme tenké palacinky.",
+          "Plnka: Hrozienka zalejeme horúcou pomarančovou šťavou. Tvaroh rozmiešame s medom, zrniečkami vanilky, kôrou a scedenými hrozienkami.",
+          "Dusené jablká: Jablká ošúpeme, nakrájame na kocky a zalejeme citrónovou šťavou. Na panvici necháme skaramelizovať cukor, pridáme jablká so šťavou a podusíme. Pridáme škoricu.",
+          "Palacinky naplníme tvarohovou plnkou, zrolujeme a podávame teplé, preliate dusenými jablkami."
+        ]
       },
       {
-        id: "rec-b6",
-        title: "Guacamole Toast / Dip",
-        category: "breakfast",
-        image: "./images/guacamole.jpg",
-        prepTime: "8 mins",
-        ingredients: ["1-2 ripe avocados", "Lime/lemon juice", "Salt & pepper to taste", "Garlic or onion (optional)", "Toast"],
-        instructions: ["Mash ripe avocado with a fork.", "Mix in lime juice, salt, pepper, and finely diced garlic or onion.", "Serve as a dip or spread over toasted bread."]
-      },
-      {
-        id: "rec-b7",
-        title: "Ham Bread Roll",
-        category: "breakfast",
-        image: "./images/ham-roll.jpg",
-        prepTime: "3 mins",
-        ingredients: ["Bread roll (rožok)", "1 tbsp butter", "3-4 slices ham"],
-        instructions: ["Slice the bread roll open longitudinally.", "Spread with a thin layer of butter.", "Layer with ham slices and enjoy."]
-      },
-      {
-        id: "rec-b8",
-        title: "Yogurt Bowl",
-        category: "breakfast",
-        image: "./images/yogurt-bowl.jpg",
-        prepTime: "3 mins",
-        ingredients: ["1 cup plain or flavored yogurt", "Fresh fruit or honey (optional)"],
-        instructions: ["Spoon yogurt into a bowl.", "Top with fresh berries or a drizzle of honey if desired."]
-      },
-      {
-        id: "rec-b9",
-        title: "Sausages / Frankfurters",
-        category: "breakfast",
-        image: "./images/sausages.jpg",
-        prepTime: "7 mins",
-        ingredients: ["2-4 sausages/frankfurters", "Mustard or ketchup", "Fresh bread"],
-        instructions: ["Gently simmer sausages in hot water for 5-7 minutes until warmed through.", "Serve hot alongside mustard or ketchup and fresh bread."]
-      },
-
-      // LUNCH
-      {
-        id: "rec-l1",
-        title: "Creamed Spinach with Egg",
-        category: "lunch",
-        image: "./images/creamed-spinach.jpg",
-        prepTime: "15 mins",
-        ingredients: ["200g frozen or fresh spinach", "1 clove garlic", "1/4 cup milk or cream", "1 tbsp flour", "1-2 eggs", "Salt & pepper"],
-        instructions: ["Sauté minced garlic in oil, add spinach, and cook down.", "Stir in flour and milk/cream to thicken, seasoning with salt and pepper.", "Serve hot topped with a fried or hard-boiled egg."]
-      },
-      {
-        id: "rec-l2",
-        title: "Vegetable Patties",
-        category: "lunch",
-        image: "./images/vegetable-patties.jpg",
-        prepTime: "25 mins",
-        ingredients: ["Grated carrots, zucchini, or corn", "1 egg", "1/2 cup breadcrumbs", "2 tbsp flour", "Oil for frying", "Salt & spices"],
-        instructions: ["Combine grated vegetables with egg, breadcrumbs, flour, and spices until a dough forms.", "Shape into patties.", "Pan-fry in oil until golden brown on both sides."]
-      },
-      {
-        id: "rec-l3",
-        title: "Pumpkin Patties",
-        category: "lunch",
-        image: "./images/pumpkin-patties.jpg",
-        prepTime: "25 mins",
-        ingredients: ["2 cups grated pumpkin/squash", "1 egg", "1/2 cup breadcrumbs", "1 clove minced garlic", "Oil for frying", "Herbs & salt"],
-        instructions: ["Squeeze excess moisture from grated pumpkin.", "Mix with egg, breadcrumbs, garlic, and seasoning.", "Shape into patties and fry in oil until crispy and cooked through."]
-      },
-      {
-        id: "rec-l4",
-        title: "Stuffed Peppers",
-        category: "lunch",
-        image: "./images/stuffed-peppers.jpg",
-        prepTime: "45 mins",
-        ingredients: ["4 bell peppers", "300g minced meat", "1/2 cup cooked rice", "500ml tomato sauce", "Onion & seasonings"],
-        instructions: ["Mix raw minced meat with rice and seasonings.", "Stuff the mixture tightly into hollowed bell peppers.", "Simmer stuffed peppers in seasoned tomato sauce for 35-40 mins until meat is fully cooked."]
-      },
-      {
-        id: "rec-l5",
-        title: "Classic Schnitzels with Potatoes",
-        category: "lunch",
-        image: "./images/schnitzels.jpg",
-        prepTime: "30 mins",
-        ingredients: ["Pork or chicken cutlets", "Flour, egg, breadcrumbs", "Potatoes", "Butter", "Oil for frying", "Salt"],
-        instructions: ["Dredge cutlets in flour, beaten egg, and breadcrumbs.", "Fry in hot oil until golden brown on both sides.", "Serve alongside boiled or mashed potatoes."]
-      },
-      {
-        id: "rec-l6",
-        title: "Spaghetti Bolognese / Tomato",
-        category: "lunch",
-        image: "./images/spaghetti-bolognese.jpg",
-        prepTime: "20 mins",
-        ingredients: ["200g spaghetti", "Tomato sauce or minced meat sauce", "Grated cheese"],
-        instructions: ["Boil spaghetti in salted water according to package instructions.", "Drain, toss with heated sauce.", "Top generously with grated cheese."]
-      },
-      {
-        id: "rec-l7",
-        title: "Spinach Spaghetti",
-        category: "lunch",
-        image: "./images/spinach-spaghetti.jpg",
-        prepTime: "15 mins",
-        ingredients: ["200g spaghetti", "150g spinach puree or leaves", "2 cloves garlic", "1/4 cup heavy cream", "Parmesan cheese"],
-        instructions: ["Boil spaghetti.", "Cook spinach with minced garlic and cream until thick.", "Toss drained spaghetti into the sauce and top with parmesan."]
-      },
-      {
-        id: "rec-l8",
-        title: "Penne with Pesto",
-        category: "lunch",
-        image: "./images/penne-pesto.jpg",
-        prepTime: "12 mins",
-        ingredients: ["200g penne pasta", "3 tbsp basil pesto", "Parmesan cheese", "Olive oil"],
-        instructions: ["Boil penne until al dente.", "Drain pasta, stir in basil pesto until evenly coated.", "Sprinkle with parmesan."]
-      },
-      {
-        id: "rec-l9",
-        title: "Vegetable & Mushroom Risotto",
-        category: "lunch",
-        image: "./images/mushroom-risotto.jpg",
-        prepTime: "30 mins",
-        ingredients: ["1 cup Arborio rice", "3 cups broth", "Mixed vegetables or mushrooms", "1/2 onion", "2 tbsp butter", "Grated cheese"],
-        instructions: ["Sauté onion, add rice, and gradually pour in warm broth while stirring until tender.", "Fold in cooked vegetables or mushrooms, butter, and cheese."]
-      },
-      {
-        id: "rec-l10",
-        title: "Nasi Goreng (Indonesian Fried Rice)",
-        category: "lunch",
-        image: "./images/nasi-goreng.jpg",
-        prepTime: "20 mins",
-        ingredients: ["2 cups cooked cold rice", "Chicken or shrimp", "2 tbsp sweet soy sauce (Kecap Manis)", "Garlic & chili", "Fried egg"],
-        instructions: ["Sauté garlic and chili in a wok, add meat and cooked rice.", "Stir-fry with sweet soy sauce until fragrant.", "Top with a sunny-side up fried egg."]
+        id: "rec-6",
+        title: "Lievance s ricottou a špaldovou múkou",
+        subtitle: "Moderný recept Veroniky",
+        category: "raňajky",
+        image: "https://images.unsplash.com/photo-1528207776546-365bb710ee93?w=800",
+        prepTime: "20 minút",
+        servings: "4-6 porcií",
+        ingredients: [
+          "Lievance: 240 g ricotty, 180 ml mlieka, 2 vajíčka, kôra z 1 citróna, 140 g polohrubej špaldovej múky, 1 lyžička kypriaceho prášku, ½ lyžičky soli, 40 g trstinového cukru, prepustené maslo",
+          "Ozdobenie: 150 g mascarpone, 60 ml javorového sirupu, 1 granátové jablko"
+        ],
+        instructions: [
+          "Ricottu zmiešame s mliekom, žĺtkami a citrónovou kôrou. Suché ingrediencie preosejeme a opatrene vmiešame do mokrých.",
+          "Z bielkov a soli vyšľaháme tuhý sneh, ktorý opatrne vmiešame stierkou.",
+          "Lievance opekáme z oboch strán dozlatista na rozpálenej panvici potretej prepusteným maslom.",
+          "Podávame ich nakladané na seba, dozdobené mascarpone, preliate javorovým sirupom a posypané dužinou granátového jablka."
+        ]
       },
 
-      // DINNER
+      // OBED (Lunch)
       {
-        id: "rec-d1",
-        title: "Pasta with Spinach",
-        category: "dinner",
-        image: "./images/pasta-spinach.jpg",
-        prepTime: "15 mins",
-        ingredients: ["200g pasta (any type)", "Fresh or frozen spinach", "2 cloves garlic", "Olive oil or cream", "Salt & pepper"],
-        instructions: ["Boil pasta until ready.", "Sauté garlic and spinach in oil.", "Toss in cooked pasta with a splash of cream or olive oil, and season."]
+        id: "rec-7",
+        title: "Držková polievka s hlivou",
+        subtitle: "Tradičný recept Marcela",
+        category: "obed",
+        image: "https://images.unsplash.com/photo-1547592180-85f173990554?w=800",
+        prepTime: "45 minút",
+        servings: "6-8 porcií",
+        ingredients: [
+          "1 cibuľa, 2 lyžice bravčovej masti, 4 strúčiky cesnaku",
+          "Soľ, mleté čierne korenie, 2 bobkové listy",
+          "500 g krájaných predvarených držiek",
+          "150 g hlivy ustricovej",
+          "1 lyžička mletej sladkej papriky, 2 lyžice paradajkového pretlaku",
+          "2 l horúcej vody, 3 zemiaky, sušený majorán",
+          "Na dokončenie: 1 hrsť čerstvej petržlenovej vňate, čerstvý majorán, 1 strúčik cesnaku, chlieb"
+        ],
+        instructions: [
+          "Nadrobná nakrájanú cibuľu restujeme v rozohriatom hrnci s bravčovou masťou. Po chvíli pridáme nadrobno nasekané strúčiky cesnaku.",
+          "Keď je základ opečený dozlatista, pridáme držky, na pásiky nakrájanú hlivu, mletú papriku a paradajkový pretlak. Krátko spolu orestujeme.",
+          "Zalejeme horúcou vodou, ochutíme soľou, korením a bobkovými listami. Varíme domäkka na miernom ohni približne 25 minút.",
+          "Po 30 minútach polievku zahustíme záprážkou a varíme ďalej ešte 10 minút.",
+          "Držkovú polievku podávame posypanú lístkami čerstvého majoránu. Ako príloha sa hodia opečené krajce chleba potreté cesnakom."
+        ]
       },
       {
-        id: "rec-d2",
-        title: "Roasted Chicken Drumsticks",
-        category: "dinner",
-        image: "./images/chicken-drumsticks.jpg",
-        prepTime: "45 mins",
-        ingredients: ["4-6 chicken drumsticks", "2 tbsp oil or melted butter", "Paprika, garlic powder, salt, pepper"],
-        instructions: ["Rub drumsticks thoroughly with oil and seasonings.", "Bake in an oven at 200°C (390°F) for 40–45 minutes until skin is crispy and cooked through."]
+        id: "rec-8",
+        title: "Hovädzí guláš na tmavom pive",
+        subtitle: "Tradičný recept Marcela",
+        category: "obed",
+        image: "https://images.unsplash.com/photo-1534422298391-e4f8c172dddb?w=800",
+        prepTime: "2 hodiny",
+        servings: "4 porcie",
+        ingredients: [
+          "2 cibule, 4 strúčiky cesnaku, 2 bobkové listy",
+          "2 lyžice bravčovej masti",
+          "750 g hovädzieho zadného nakrájaného na kocky",
+          "Soľ, mleté čierne korenie, 2 lyžičky mletej sladkej papriky",
+          "500 ml tmavého piva",
+          "Zahustenie: 1 lyžička zmraznutého masla, 1 lyžica hladkej múky",
+          "Roztlačené zemiaky: 1 kg zemiakov, 2 lyžice masla, 100 g oškvarkov, zelená časť lahodkovej cibuľky"
+        ],
+        instructions: [
+          "Cibuľu a cesnak nasekáme nadrobno. Restujeme ich spolu s bobkovými listami v hrnci s rozohriatou masťou dozlatista.",
+          "Pridáme umyté a osušené hovädzie kocky. Ochutíme soľou a korením. Keď sa mäso zatiahne, prisypeme mletú papriku a chvíľu opekáme. Podlejeme tmavým pivom a dusíme pod pokrievkou domäkka.",
+          "Po približne 1,5 hodine zahustíme guláš maslom, ktoré sme zmiešali s hladkou múkou. Povaríme ešte 15 minút.",
+          "Zemiaky: Očistené zemiaky nakrájame a uvaríme v osolenej vode domäkka. V menšom hrnci rozpustíme maslo. K scedeným uvareným zemiakom pridáme rozustené maslo, oškvarky aztlačíme.",
+          "Guláš podávame v hlbokom tanieri posypaný nasekanou lahôdkovou cibuľkou so zemiakmi."
+        ]
+      },
+
+      // VEČERA (Dinner)
+      {
+        id: "rec-9",
+        title: "Pečené buchty plnené tvarohom a marhuľami",
+        subtitle: "Tradičný recept Veroniky",
+        category: "večera",
+        image: "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800",
+        prepTime: "1 hodina 30 minút",
+        servings: "24 porcií",
+        ingredients: [
+          "Cesto: 42 g droždia, 120 ml mlieka, 480 g hladkej múky, 50 g kryštálového cukru, 2 žĺtky, 60 g masla, ½ lyžičky soli",
+          "Náplň: 400 g marhúľ, 250 g hrudkovitého tvarohu, 30 g kryštálového cukru, 2 žĺtky",
+          "Na potretie pred pečením: 50 g rozpusteného masla",
+          "Na potretie po upečení: 30 g rozpusteného masla, 30 ml tuzemáku"
+        ],
+        instructions: [
+          "Droždie rozmiešame vo vlažnom mlieku s 1 lyžicou múky a 1 lyžicou cukru. Necháme aktivovať kvások (cca 10 minút).",
+          "Miesime spolu približne 5 minút. Pridáme zmäknuté maslo a soľ a miesime ďalších 5 minút. Cesto prikryjeme a necháme nakysnúť.",
+          "Nakysnuté cesto rozvaľkáme na pomúčenej doske a nakrájame na štvorce. Do stredu dáme tvarohovú náplň a marhuľu.",
+          "Buchty ukladáme tesne vedľa seba do maslom vymazaného pekáča, spájom smerom nadol. Po stranách potierame rozpusteným maslom.",
+          "Pečieme pri 180 °C dozlatista. Ešte teplé buchty potrieme rozpusteným maslom zmiešaným s tuzemákom."
+        ]
       },
       {
-        id: "rec-d3",
-        title: "Fried Cheese (Vyprážaný Syr)",
-        category: "dinner",
-        image: "./images/vyprazany-syr.jpg",
-        prepTime: "15 mins",
-        ingredients: ["200g block cheese (Eidam/Gouda)", "Flour", "1 egg", "Breadcrumbs", "Oil for deep-frying"],
-        instructions: ["Double-dredge cheese blocks in flour, beaten egg, and breadcrumbs to prevent leakage.", "Fry in hot oil until golden brown on all sides."]
+        id: "rec-10",
+        title: "Pečené bravčové stehno s dusenou kapustou a zemiakmi",
+        subtitle: "Tradičný recept Marcela",
+        category: "večera",
+        image: "https://images.unsplash.com/photo-1544025162-d76694265947?w=800",
+        prepTime: "2 hodiny 30 minút",
+        servings: "6-8 porcií",
+        ingredients: [
+          "Stehno: 1 kg bravčového stehna, 1 veľká mrkva, 2 petržleny, 5 strúčikov cesnaku, mleté čierne korenie, soľ, 2 lyžice bravčovej masti, 150 ml suchého bieleho vína",
+          "Dusená kapusta: 2 lyžice bravčovej masti, 1 cibuľa, 4 bobkové listy, 1 kg kyslej kapusty, 2 lyžice medu, 1 lyžička celej rasce, 100 ml suchého bieleho vína",
+          "Záprážka: 2 lyžice bravčovej masti, 2 lyžice hladkej múky",
+          "Pečené zemiaky: 1 kg zemiakov, olivový olej, soľ, korenie, rozmarín"
+        ],
+        instructions: [
+          "Pečené stehno: Očistené stehno osolíme a okoreníme. Urobíme otvory, do ktorých dáme mrkvu, petržlen a cesnak. Opečieme na masti dozlatista. Preložíme do zapekacej misy, podlejeme vínom a pečieme pri 200 °C približne 1,5 hodiny.",
+          "Dusená kapusta: Na masti opražíme cibuľu s bobkovými listami. Pridáme prepláchnutú kyslú kapustu, med, soľ, korenie, rascu. Podlejeme vodou a vínom a dusíme 40 minút. Zahustíme záprážkou.",
+          "Pečené zemiaky: Umyte zemiaky nakrájame na mesiačiky, ochutíme soľou, korením, rozmarínom a olivovým olejom. Pečieme na plechu pri 200 °C asi 40 minút.",
+          "Bravčové stehno podávame nakrájané na tenké plátky so šťavou, kapustou a pečenými zemiakmi."
+        ]
       },
       {
-        id: "rec-d4",
-        title: "French Potatoes (Francúzske Zemiaky)",
-        category: "dinner",
-        image: "./images/francuzske-zemiaky.jpg",
-        prepTime: "50 mins",
-        ingredients: ["4 boiled potatoes", "2 hard-boiled eggs", "100g sliced sausage/bacon", "1 cup heavy cream", "Grated cheese"],
-        instructions: ["Layer sliced boiled potatoes, hard-boiled eggs, and sausage in a baking dish.", "Pour over seasoned heavy cream and top with cheese.", "Bake at 180°C until top is golden brown."]
+        id: "rec-11",
+        title: "Plnená bravčová panenka so syrom feta a letným šalátom",
+        subtitle: "Moderný recept Marcela",
+        category: "večera",
+        image: "https://images.unsplash.com/photo-1432139555190-58524dae6a55?w=800",
+        prepTime: "1 hodina",
+        servings: "4 porcie",
+        ingredients: [
+          "Panenka: 800 g bravčovej panenky, 100 g syra feta, čerstvá bazalka, mleté čierne korenie, olivový olej, morská soľ",
+          "Letný šalát: 2 kapusty pak-choi, olivový olej, 100 ml suchého bieleho vína, 1 hrsť sušeného goji, ½ zrelého ananásu, 1 štipľavá paprička, 1 hrsť poľníčka, 1 citrón, 1 hrsť nesolených a nepražených tekvicových semienok"
+        ],
+        instructions: [
+          "Panenka: Bravčovú panenku rozdelíme na polovice. Ostrým nožom urobený otvor naplníme syrom feta a lístkami bazalky. Opečieme na panvici s olivovým olejom dozlatista.",
+          "Preložíme do zapekacej misy a dopečieme v rúre vyhriatej na 200 °C približne 8-10 minút. Po vybratí necháme odpočívať.",
+          "Šalát: Z kapusty pak-choi odrežeme koniec a rozoberieme lístky. Sprudka opekáme na panvici 1-2 minúty. Do druhej hrnca nasypeme goji, prilejeme víno a varíme.",
+          "Ananás očistíme a nakrájame na kocky. Pridáme nakrájanú papričku, poľníček, opražené tekvicové semienka a ochutíme soľou, korením, citrónovou šťavou a olivovým olejom.",
+          "Panenku podávame nakrájanú na plátky so šalátom."
+        ]
       },
       {
-        id: "rec-d5",
-        title: "Grilled Encián (Camembert-Style Cheese)",
-        category: "dinner",
-        image: "./images/grilled-encian.jpg",
-        prepTime: "12 mins",
-        ingredients: ["1-2 Encián/Camembert cheese wheels", "1 tbsp olive oil", "Mixed herbs", "Cranberry sauce for serving"],
-        instructions: ["Wrap seasoned cheese wheel in foil or place directly on a grill or pan.", "Grill until the interior melts softly.", "Serve warm with cranberry sauce."]
+        id: "rec-12",
+        title: "Mramorová bábovka z treného cesta",
+        subtitle: "Tradičný recept Veroniky",
+        category: "večera",
+        image: "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=800",
+        prepTime: "1 hodina 15 minút",
+        servings: "12 porcií",
+        ingredients: [
+          "5 vajíčok, 200 g kryštálového cukru, 100 ml vlažnej vody, šťava z ½ citróna, kôra z 1 citróna",
+          "½ vanilkového struku, 150 ml slnečnicového oleja, 330 g polohrubej múky",
+          "½ balíčka kypriaceho prášku, štipka soli, 50 g kakaa",
+          "Maslo a strúhanka na vymazanie a vysypanie formy, práškový cukor na posypanie"
+        ],
+        instructions: [
+          "Žĺtky s cukrom vyšľaháme mixérom do svetlej peny. Pomaly pridávame vlažnú vodu, citrónovú šťavu, kôru, zrnká vanilky a olej.",
+          "Ručne primiešame preosiatu múku s práškom do pečiva.",
+          "Z bielkov a štipky soli vyšľaháme tuhý sneh, ktorý jemne stierkou primiešame k cestu.",
+          "Cesto rozdelíme na dve časti a do jednej pridáme preosiate kakao. Striedavo ich vrstvíme do maslom vymazanej a strúhankou vysypanej bábovkovej formy.",
+          "Pečieme pri 180 °C približne 40 minút. Po vychladnutí vyklopíme a posypeme práškovým cukrom."
+        ]
       },
       {
-        id: "rec-d6",
-        title: "Spinach Gnocchi / Dumplings (Špenátové Halušky)",
-        category: "dinner",
-        image: "./images/spenatove-halusky.jpg",
-        prepTime: "25 mins",
-        ingredients: ["200g spinach dough/gnocchi", "100g cheese sauce or bryndza cheese", "Bacon (optional)"],
-        instructions: ["Drop dumplings into boiling salted water until they float to the top.", "Drain and toss with melted cheese or bryndza sauce."]
-      },
-      {
-        id: "rec-d7",
-        title: "Filled Dumplings (Pirohy)",
-        category: "dinner",
-        image: "./images/pirohy.jpg",
-        prepTime: "20 mins",
-        ingredients: ["200g potato or sweet stuffed pirohy", "Melted butter", "Fried onions (savory) or toasted breadcrumbs (sweet)"],
-        instructions: ["Boil pirohy in water until they float to the surface.", "Toss in melted butter.", "Top with fried onions for savory pirohy or toasted breadcrumbs for sweet ones."]
-      },
-      {
-        id: "rec-d8",
-        title: "Mushroom Croquettes",
-        category: "dinner",
-        image: "./images/mushroom-croquettes.jpg",
-        prepTime: "30 mins",
-        ingredients: ["1 cup finely minced mushrooms", "1 cup thick mashed potatoes", "1 egg", "Breadcrumbs", "Oil for frying"],
-        instructions: ["Combine sautéed mushrooms with thick mashed potatoes.", "Shape into cylinders, dredge in beaten egg and breadcrumbs.", "Deep-fry until golden brown."]
-      },
-      {
-        id: "rec-d9",
-        title: "Ham Wrap",
-        category: "dinner",
-        image: "./images/ham-wrap.jpg",
-        prepTime: "5 mins",
-        ingredients: ["1 large tortilla wrap", "3 slices ham", "2 slices cheese", "Lettuce & tomato", "Mayo or sauce"],
-        instructions: ["Lay ham, cheese, and vegetables onto a tortilla.", "Add sauce, roll up tightly.", "Slice in half and serve."]
-      },
-      {
-        id: "rec-d10",
-        title: "Potato Finger Dumplings (Šúľance)",
-        category: "dinner",
-        image: "./images/sulance.jpg",
-        prepTime: "25 mins",
-        ingredients: ["300g potato dough", "Melted butter", "Ground poppy seeds or walnuts", "Powdered sugar"],
-        instructions: ["Roll dough into small finger-sized shapes and boil until floating.", "Drain and coat generously in melted butter.", "Toss with ground poppy seeds and powdered sugar."]
-      },
-      {
-        id: "rec-d11",
-        title: "Steamed Sweet Buns (Buchty na Pare)",
-        category: "dinner",
-        image: "./images/buchty-na-pare.jpg",
-        prepTime: "30 mins",
-        ingredients: ["4 sweet yeast buns stuffed with jam", "Melted butter", "Cocoa powder", "Powdered sugar"],
-        instructions: ["Steam stuffed yeast buns over boiling water for 10–12 minutes.", "Drizzle with plenty of melted butter.", "Dust generously with cocoa powder and powdered sugar."]
+        id: "rec-13",
+        title: "Tekvicové minibábovky s citrónovou polevou",
+        subtitle: "Moderný recept Veroniky",
+        category: "večera",
+        image: "https://images.unsplash.com/photo-1509440159596-0249088772ff?w=800",
+        prepTime: "1 hodina 40 minút",
+        servings: "12 porcií",
+        ingredients: [
+          "500 g tekvice hokkaidó (asi 200 g pyré), 3 vajíčka, 150 g trstinového cukru, 70 ml olivového oleja, 50 ml vody",
+          "90 g hladkej múky, 90 g špaldovej múky, 1 lyžička sódy bikarbóny, 1 lyžička kypriaceho prášku, 1 lyžička mletej škorice, 1 lyžička holandského kakaa, 100 g pekanových orechov",
+          "Poleva: 120 g nátierky z čerstvého syra, 60 g práškového cukru, 230 ml plnotučného mlieka, šťava z 1 citróna, kôra z 1 citróna, ½ vanilkového struku, 80 g pekanových orechov na posypanie"
+        ],
+        instructions: [
+          "Tekvicu očistíme, nakrájame na kocky a upečieme dozlatista v rúre vyhriatej na 180 °C. Potom ju rozmixujeme na pyré.",
+          "Vajíčka s cukrom vyšľaháme do nadýchanej peny. Opatrne prilejeme olej a vodu, primiešame preosiate suché ingrediencie a tekvicové pyré.",
+          "Cestom naplníme formičky a pečieme pri 175 °C približne 20 minút dozlatista.",
+          "Poleva: Nátierku z čerstvého syra vyšľaháme s cukrom, mliekom, citrónovou šťavou, kôrou a vanilkou. Vymiešame na hladkú polevu.",
+          "Minibábovky dozdobíme polevou a nasekanými pekanovými orechmi."
+        ]
       }
     ];
 
     // Render Recipes into matched categories
     function renderAll() {
-      ['breakfast', 'lunch', 'dinner'].forEach(cat => {
+      ['raňajky', 'obed', 'večera'].forEach(cat => {
         const container = document.getElementById(`${cat}-container`);
-        if (!container) return;
         container.innerHTML = '';
         
         const catRecipes = recipes.filter(r => r.category === cat);
@@ -620,18 +657,22 @@
 
       card.innerHTML = `
         <h3 class="recipe-title">${recipe.title}</h3>
-        <div class="recipe-meta">⏱ Prep time: ${recipe.prepTime}</div>
+        ${recipe.subtitle ? `<div class="recipe-subtitle">${recipe.subtitle}</div>` : ''}
+        <div class="recipe-meta-group">
+          <div class="recipe-meta">⏱ Čas prípravy: ${recipe.prepTime}</div>
+          ${recipe.servings ? `<div class="recipe-meta">🍽 ${recipe.servings}</div>` : ''}
+        </div>
         <div class="recipe-image-wrap">
           <img class="recipe-image" src="${recipe.image}" alt="${recipe.title}">
         </div>
         <div class="recipe-details">
-          <h4>Ingredients</h4>
+          <h4>Suroviny</h4>
           <ul>${recipe.ingredients.map(item => `<li>${item}</li>`).join('')}</ul>
-          <h4>Instructions</h4>
+          <h4>Postup</h4>
           <ol>${recipe.instructions.map(step => `<li>${step}</li>`).join('')}</ol>
         </div>
         <div class="card-footer">
-          <a href="#top" class="btn-top">↑ Back to Top</a>
+          <a href="#top" class="btn-top">↑ Na začiatok</a>
         </div>
       `;
       return card;
@@ -640,14 +681,13 @@
     // Section-scoped Surprise Me logic
     function surpriseMe(category) {
       const available = recipes.filter(r => r.category === category);
-      if (available.length === 0) return alert('No recipes available in this section!');
+      if (available.length === 0) return alert('V tejto sekcii zatiaľ nie sú žiadne recepty!');
 
       const randomRecipe = available[Math.floor(Math.random() * available.length)];
       const element = document.getElementById(`card-${randomRecipe.id}`);
 
       if (element) {
-        // block: 'start' brings the top edge of the card (and its title) fully into view
-        element.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        element.scrollIntoView({ behavior: 'smooth', block: 'center' });
         element.classList.add('highlight');
         setTimeout(() => element.classList.remove('highlight'), 2000);
       }
